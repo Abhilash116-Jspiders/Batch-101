@@ -1,0 +1,5 @@
+<p>{{name | greet}}</p>
+@for (user of (users | isActive);track user.id) {
+    <p>User ID is {{user.id}} User Name is {{user.name}} User IsActive {{user.isActive}}</p>
+}
+<button (click)="updateUser()">UpdateUser</button>

@@ -1,0 +1,9 @@
+<p>{{(firstName + " " + lastName) | uppercase }}</p>
+<p>{{(firstName + " " + lastName) | lowercase }}</p>
+<p>Without Decimal Pipe {{decimalVal}}</p>
+<p>With Decimal Pipe {{decimalVal | number : "0.2-2"}}</p>
+<p>Student Percentage is {{(marksObtained/totalMarks) | percent : "0.2-2"}}</p>
+<p>Bank Balance is {{bankBalance | currency : "CAD" : "symbol-narrow" : "0.0-0" }}</p>
+<p>Todays Date is {{todaysDate | date : 'full' : '+0730'}}</p>
+<p>{{user | json}}</p>
+

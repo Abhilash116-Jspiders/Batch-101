@@ -1,0 +1,9 @@
+@for (item of items;track item.id; let idx = $index, cnt = $count) {
+    <p>Total Items in My collection {{$count}}, First ContextualVariable {{$first}}
+        , Last ContextualVariable {{$last}}, Is the Index is Even {{$even}},
+        Is the Index is Odd {{$odd}}
+    </p>
+    <p>Index Val is {{idx}} Item ID : {{item.id}} and Item name: {{item.name}}</p>
+} @empty {
+    <p>Items collection is Empty</p>
+}
