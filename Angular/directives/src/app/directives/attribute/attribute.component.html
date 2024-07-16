@@ -1,0 +1,4 @@
+<p class="alert" [ngClass]="{'alert-success': isSuccess, 'alert-danger': !isSuccess}">ng class works!</p>
+<p [ngStyle]="{'background-color': applyRed ? 'red': 'green', 'color': 'white'}">ng Style Works!</p>
+<input type="text" [(ngModel)]="searchVal">
+<p>{{searchVal}}</p>

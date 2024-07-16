@@ -1,0 +1,10 @@
+<p *ngIf="toBeRender">structural works!</p>
+<div *ngFor="let user of users;let i = index, let c = count">
+    <p>{{i}} - User ID : {{user.id}} User Name: {{user.name}}</p>
+</div>
+<div [ngSwitch]="ticketPrice">
+    <p *ngSwitchCase="30">Allowed to Play Gaint Wheel</p>
+    <p *ngSwitchCase="50">Allowed to Play Gaint Wheel and Dashing Car</p>
+    <p *ngSwitchCase="100">Allowed to Play Gaint Wheel, Roller Coaster and Dashing Car</p>
+    <p *ngSwitchDefault>Please purchase a ticket</p>
+</div>
