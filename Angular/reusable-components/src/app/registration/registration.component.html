@@ -1,0 +1,24 @@
+<form class="container" #registrationForm="ngForm" (ngSubmit)="register(registrationForm)">
+    <div class="form-group" ngModelGroup="fullName">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="firstName" ngModel #firstName="ngModel" required>
+            <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
+                <p class="text text-danger">*this field is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="lastName" ngModel>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" ngModel>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
