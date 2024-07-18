@@ -1,0 +1,30 @@
+<form class="container" [formGroup]="registrationForm" (ngSubmit)="submit()">
+    <div class="form-group" formGroupName="fullName">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName">
+            <div *ngIf="registrationForm.get('fullName').get('firstName').invalid &&
+                (registrationForm.get('fullName').get('firstName').touched || registrationForm.get('fullName').get('firstName').dirty)">
+                <p class="text text-danger">this field is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" formControlName="email">
+        <div *ngIf="registrationForm.get('email').invalid && 
+            (registrationForm.get('email').touched || registrationForm.get('email').dirty)">
+            <p *ngIf="registrationForm.get('email').errors.required" class="text text-danger">*this field is required</p>
+            <p *ngIf="registrationForm.get('email').errors.email" class="text text-danger">*provide a valid email</p>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" formControlName="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
